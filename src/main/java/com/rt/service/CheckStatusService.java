@@ -23,11 +23,11 @@ public class CheckStatusService {
         System.out.println("calling another service to get status!!");
         throw new HttpServerErrorException(HttpStatus.INTERNAL_SERVER_ERROR);
 
-        // return "approved";
+        // return "example";
     }
 
     @Recover
-    public Example recover(HttpServerErrorException exception) {
+    public Example recoverFromError(HttpServerErrorException exception) {
         return new Example("Please try after some time!!");
     }
 }
