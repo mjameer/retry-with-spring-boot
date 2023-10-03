@@ -29,6 +29,7 @@ public class CheckStatusService {
 
     @Recover
     public Example recoverFromError(HttpServerErrorException exception) {
+         // Implement logic for managing failures after all retries are exhausted
         return new Example("Please try after some time!!");
     }
 }
