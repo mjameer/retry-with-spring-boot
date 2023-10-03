@@ -22,3 +22,5 @@ Add Retryable to the service class that needs a retry as follows:
 
 Add  @Recover to Handle the exception and return the object as per the requirement from here. 
 
+https://medium.com/@mj_ameer/streamlining-code-with-spring-retry-7594c1823fd7
+
