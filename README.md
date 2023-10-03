@@ -1,5 +1,16 @@
 # retry-with-spring-boot
 
+## To implement Retry 
+
+Add the following dependency to pom.xml
+
+```
+        <dependency>
+            <groupId>org.springframework.retry</groupId>
+            <artifactId>spring-retry</artifactId>
+        </dependency>
+```
+
 Add @EnableRetry in the main class
 
 Add Retryable to the service class that needs a retry as follows:
