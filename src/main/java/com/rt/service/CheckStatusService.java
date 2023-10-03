@@ -17,6 +17,7 @@ public class CheckStatusService {
             HttpClientErrorException.class)
     public Example checkStatus(String trackingNumber) {
 
+        // Insert logic prone to failure and necessitating retries here
         // another microservice call to get status.
         //rest template call
 
