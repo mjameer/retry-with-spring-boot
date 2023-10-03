@@ -14,6 +14,6 @@ public class CheckStatusController {
 
     @GetMapping("/check")
     public String checkStatus(@RequestParam(name = "tid") String trackingNumber) {
-        return checkStatusService.checkStatus(trackingNumber);
+        return checkStatusService.checkStatus(trackingNumber).toString();
     }
 }
