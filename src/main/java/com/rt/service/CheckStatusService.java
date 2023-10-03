@@ -15,7 +15,7 @@ public class CheckStatusService {
 
     @Retryable(value = HttpStatusCodeException.class, maxAttempts = 3, backoff = @Backoff(3000), exclude =
             HttpClientErrorException.class)
-    public String checkStatus(String trackingNumber) {
+    public Example checkStatus(String trackingNumber) {
 
         // another microservice call to get status.
         //rest template call
@@ -27,7 +27,7 @@ public class CheckStatusService {
     }
 
     @Recover
-    public String recover(HttpServerErrorException exception) {
-        return "Please try after some time!!";
+    public Example recover(HttpServerErrorException exception) {
+        return new Example("Please try after some time!!");
     }
 }
