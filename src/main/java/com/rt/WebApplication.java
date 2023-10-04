@@ -6,10 +6,8 @@ import org.springframework.retry.annotation.EnableRetry;
 
 @EnableRetry
 @SpringBootApplication
-public class SpringBootRetryExampleApplication {
-
+public class WebApplication {
     public static void main(String[] args) {
-        SpringApplication.run(SpringBootRetryExampleApplication.class, args);
+        SpringApplication.run(WebApplication.class, args);
     }
-
 }

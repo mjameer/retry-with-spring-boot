@@ -5,8 +5,8 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.7.16</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <version>3.1.4</version>
+        <relativePath/>
     </parent>
     <groupId>com.rt</groupId>
     <artifactId>SpringBootRetryExample</artifactId>
@@ -14,7 +14,7 @@
     <name>SpringBootRetryExample</name>
 
     <properties>
-        <java.version>1.8</java.version>
+        <java.version>17</java.version>
     </properties>
 
     <dependencies>
@@ -26,6 +26,11 @@
             <groupId>org.springframework.retry</groupId>
             <artifactId>spring-retry</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+        </dependency>
+
     </dependencies>
 
     <build>

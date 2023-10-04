@@ -13,15 +13,16 @@ import org.springframework.web.client.HttpStatusCodeException;
 public class CheckStatusService {
 
 
-    @Retryable(value = HttpStatusCodeException.class, maxAttempts = 3, backoff = @Backoff(3000), exclude =
-            HttpClientErrorException.class)
-    public Example checkStatus(String trackingNumber) {
+    @Retryable(value = HttpStatusCodeException.class, maxAttempts = 3,
+            backoff = @Backoff(3000),
+            exclude = HttpClientErrorException.class)
+    public Example checkStatus() {
 
         // Insert logic prone to failure and necessitating retries here
-        // another microservice call to get status.
-        //rest template call
+        // microservice call to get status.
+        // rest template call
 
-        System.out.println("calling another service to get status!!");
+        System.out.println("Calling another service to get status!!");
         throw new HttpServerErrorException(HttpStatus.INTERNAL_SERVER_ERROR);
 
         // return "example";
