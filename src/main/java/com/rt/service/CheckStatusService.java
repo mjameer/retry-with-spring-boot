@@ -13,9 +13,9 @@ import org.springframework.web.client.HttpStatusCodeException;
 public class CheckStatusService {
 
 
-    @Retryable(value = HttpStatusCodeException.class, maxAttempts = 3,
-            backoff = @Backoff(3000),
-            exclude = HttpClientErrorException.class)
+    @Retryable(retryFor  = HttpStatusCodeException.class, maxAttempts = 3,
+            backoff=@Backoff(delay=100),
+            notRecoverable = {HttpClientErrorException.class })
     public Example checkStatus() {
 
         // Insert logic prone to failure and necessitating retries here
@@ -31,6 +31,7 @@ public class CheckStatusService {
     @Recover
     public Example recoverFromError(HttpServerErrorException exception) {
          // Implement logic for managing failures after all retries are exhausted
+        exception.printStackTrace();
         return new Example("Please try after some time!!");
     }
 }
